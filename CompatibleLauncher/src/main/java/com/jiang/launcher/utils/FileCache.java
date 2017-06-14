@@ -1,6 +1,7 @@
 package com.jiang.launcher.utils;
 
 import android.content.Context;
+import android.os.Environment;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -9,10 +10,10 @@ public class FileCache {
     public File cacheDir;
 
     public FileCache(Context context) {
-        if (android.os.Environment.getExternalStorageState().equals(
-                android.os.Environment.MEDIA_MOUNTED)) {
+        if (Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED)) {
             cacheDir = new File(
-                    android.os.Environment.getExternalStorageDirectory(),
+                    Environment.getExternalStorageDirectory(),
                     "WoDouCache");
         } else {
             cacheDir = context.getCacheDir();

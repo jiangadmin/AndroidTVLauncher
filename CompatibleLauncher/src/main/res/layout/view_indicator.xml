@@ -5,7 +5,7 @@
               android:layout_height="match_parent"
               android:orientation="horizontal">
 
-    <com.jacky.compatible.launcher.features.indicator.TabButton
+    <com.jiang.launcher.features.indicator.TabButton
         android:id="@+id/indicator_tab1"
         android:layout_width="@dimen/indicator_tab_width"
         android:layout_height="@dimen/indicator_tab_height"
@@ -14,7 +14,7 @@
         android:gravity="center"
         launcher:buttonTitle="@string/indicator_item_service_text"/>
 
-    <com.jacky.compatible.launcher.features.indicator.TabButton
+    <com.jiang.launcher.features.indicator.TabButton
         android:id="@+id/indicator_tab2"
         android:layout_width="@dimen/indicator_tab_width"
         android:layout_height="@dimen/indicator_tab_height"
@@ -23,7 +23,7 @@
         android:gravity="center"
         launcher:buttonTitle="@string/indicator_item_setting_text"/>
 
-    <com.jacky.compatible.launcher.features.indicator.TabButton
+    <com.jiang.launcher.features.indicator.TabButton
         android:id="@+id/indicator_tab3"
         android:layout_width="@dimen/indicator_tab_width"
         android:layout_height="@dimen/indicator_tab_height"

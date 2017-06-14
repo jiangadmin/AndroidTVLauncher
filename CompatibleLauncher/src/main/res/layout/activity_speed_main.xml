@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kangzizhuang.networkandbluetooth.MainActivity"
-    android:background="@drawable/wifiactivity_bg">
+    tools:context=".features.wifi.WifiActivity"
+    >
 
-    <com.jacky.compatible.launcher.views.TitleView
-        android:layout_width="fill_parent"
+    <com.jiang.launcher.views.TitleView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 

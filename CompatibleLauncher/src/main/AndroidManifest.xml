@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.jacky.launcher">
+          package="com.jiang.launcher">
 
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.GET_TASKS"/>
@@ -19,35 +19,53 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:name="com.jacky.compatible.launcher.LauncherApp"
+        android:name="com.jiang.launcher.LauncherApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+        android:theme="@style/StartTheme">
 
-        <activity android:name="com.jacky.compatible.launcher.main.MainActivity">
+        <!--主页-->
+        <activity android:name=".Activity.Home_Activity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+
+                <!-- 增加lancher配置-->
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name="com.jacky.compatible.launcher.features.Ethernet"/>
-        <activity android:name="com.jacky.compatible.launcher.features.Bluetooth"/>
-        <activity android:name="com.jacky.compatible.launcher.features.setting.SettingCustom"/>
-        <activity android:name="com.jacky.compatible.launcher.features.app.AppUninstall"/>
-        <activity android:name="com.jacky.compatible.launcher.features.app.AppAutoRun"/>
-        <activity android:name="com.jacky.compatible.launcher.features.speedtest.SpeedTestActivity"/>
+        <!--APP列表-->
+        <activity android:name=".Activity.APPList_Activity"
+            android:screenOrientation="landscape"/>
+
+
+
         <activity
-            android:name="com.jacky.compatible.launcher.features.eliminateprocess.EliminateMainActivity"
+            android:screenOrientation="landscape"
+            android:name="com.jiang.launcher.main.MainActivity">
+
+        </activity>
+
+
+
+        <activity android:name="com.jiang.launcher.features.Ethernet"/>
+        <activity android:name="com.jiang.launcher.features.Bluetooth"/>
+        <activity android:name="com.jiang.launcher.features.setting.SettingCustom"/>
+        <activity android:name="com.jiang.launcher.features.app.AppUninstall"/>
+        <activity android:name="com.jiang.launcher.features.app.AppAutoRun"/>
+        <activity android:name="com.jiang.launcher.features.speedtest.SpeedTestActivity"/>
+        <activity
+            android:name="com.jiang.launcher.features.eliminateprocess.EliminateMainActivity"
             android:theme="@android:style/Theme.Dialog"/>
         <activity
-            android:name="com.jacky.compatible.launcher.features.garbageclear.GarbageClear"
+            android:name="com.jiang.launcher.features.garbageclear.GarbageClear"
             android:theme="@android:style/Theme.Dialog"/>
-        <activity android:name="com.jacky.compatible.launcher.features.wifi.WifiActivity"/>
+        <activity android:name="com.jiang.launcher.features.wifi.WifiActivity"/>
     </application>
 
 </manifest>

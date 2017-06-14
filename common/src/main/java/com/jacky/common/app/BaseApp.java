@@ -21,6 +21,7 @@ public abstract class BaseApp extends Application {
 
     private static boolean mResume;
     private static boolean mPendingKill;
+    public static boolean LogShow = true;
 
     @Override
     public void onCreate() {

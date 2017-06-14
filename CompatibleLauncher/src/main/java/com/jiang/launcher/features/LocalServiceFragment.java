@@ -8,10 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.jiang.launcher.main.MainActivity;
-import com.jiang.launcher.views.FocusView;
 import com.jacky.uikit.fragment.BaseFragment;
 import com.jiang.launcher.R;
+import com.jiang.launcher.main.MainActivity;
+import com.jiang.launcher.views.FocusView;
 
 public class LocalServiceFragment extends BaseFragment implements View.OnClickListener {
 

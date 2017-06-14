@@ -10,14 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.jacky.uikit.fragment.BaseFragment;
+import com.jiang.launcher.R;
 import com.jiang.launcher.features.app.AppAutoRun;
 import com.jiang.launcher.features.app.AppUninstall;
 import com.jiang.launcher.features.eliminateprocess.EliminateMainActivity;
 import com.jiang.launcher.features.garbageclear.GarbageClear;
 import com.jiang.launcher.features.speedtest.SpeedTestActivity;
 import com.jiang.launcher.main.MainActivity;
-import com.jacky.uikit.fragment.BaseFragment;
-import com.jiang.launcher.R;
 
 public class SettingFragment extends BaseFragment implements View.OnClickListener {
 

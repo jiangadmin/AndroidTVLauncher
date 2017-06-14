@@ -8,26 +8,26 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.jacky.uikit.fragment.BaseFragment;
+import com.jiang.launcher.R;
+import com.jiang.launcher.adapter.MainActivityAdapter;
+import com.jiang.launcher.features.LocalServiceFragment;
 import com.jiang.launcher.features.app.AppFragment;
 import com.jiang.launcher.features.indicator.TabIndicator;
 import com.jiang.launcher.features.setting.SettingFragment;
 import com.jiang.launcher.features.viewpager.DefaultTransformer;
 import com.jiang.launcher.features.viewpager.FixViewpagerScrollerSpeed;
-import com.jiang.launcher.R;
-import com.jiang.launcher.adapter.MainActivityAdapter;
-import com.jiang.launcher.features.LocalServiceFragment;
-import com.jacky.uikit.activity.BaseTitleActivity;
-import com.jacky.uikit.fragment.BaseFragment;
 
 import java.util.ArrayList;
 
-public class MainActivity extends BaseTitleActivity implements View.OnClickListener, TabIndicator.onTabChangeListener,
+public class MainActivity extends FragmentActivity implements View.OnClickListener, TabIndicator.onTabChangeListener,
         TabIndicator.onTabClickListener {
 
     private ViewPager mViewPager;
@@ -127,7 +127,7 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         }
         switch (keyCode) {
             case KeyEvent.KEYCODE_BACK:
-//                finish();
+                finish();
                 break;
             case KeyEvent.KEYCODE_DPAD_UP:
                 return false;
@@ -162,10 +162,11 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
 
     }
 
+
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         unregisterReceiver(mConnReceiver);
+        super.onDestroy();
     }
 
     @Override

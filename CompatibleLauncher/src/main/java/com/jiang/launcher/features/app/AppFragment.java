@@ -11,11 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
+import com.jacky.uikit.fragment.BaseFragment;
+import com.jiang.launcher.R;
 import com.jiang.launcher.adapter.AppAdapter;
 import com.jiang.launcher.main.MainActivity;
 import com.jiang.launcher.model.AppBean;
-import com.jiang.launcher.R;
-import com.jacky.uikit.fragment.BaseFragment;
 
 import java.util.List;
 

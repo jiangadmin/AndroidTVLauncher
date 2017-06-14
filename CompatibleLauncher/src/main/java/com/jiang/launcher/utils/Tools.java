@@ -341,4 +341,17 @@ public final class Tools {
         return returnValue.booleanValue();
     }
 
+
+    /**
+     * @param dp 要转换的 dp
+     * @return 转出 px
+     */
+    public static int dp2px(Context context, float dp) {
+        // 拿到屏幕密度
+        float density = context.getResources().getDisplayMetrics().density;
+        int px = (int) (dp * density + 0.5f);// 四舍五入
+        return px;
+    }
+
+
 }

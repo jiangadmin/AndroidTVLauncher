@@ -3,6 +3,7 @@ package com.jiang.launcher.utils;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.LinearInterpolator;
@@ -115,12 +116,13 @@ public class AnimUtils {
 
 
     /**
-     * 控件上下移动
-     * @param v
-     * @param num
+     * 控制控件上下移动
+     * @param v 控件
+     * @param from 开始位置
+     * @param to 结束位置
      */
-    public static void animupnum(View v, int num) {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(v, "translationY", num, 0);
+    public static void animupnum(Context context,View v, int from, int to) {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(v, "translationY", Tools.dp2px(context, from), Tools.dp2px(context, to));
         AnimatorSet set = new AnimatorSet();
         set.playSequentially(animator);
         set.setDuration(200);

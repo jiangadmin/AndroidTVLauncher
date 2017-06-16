@@ -43,6 +43,10 @@
         <activity android:name=".Activity.APPList_Activity"
             android:screenOrientation="landscape"/>
 
+        <!--控制台-->
+        <activity android:name=".Activity.Setting_Activity"
+            android:screenOrientation="landscape"/>
+
 
 
         <activity

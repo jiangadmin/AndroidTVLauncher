@@ -14,7 +14,7 @@ import com.jiang.launcher.R;
 import com.jiang.launcher.main.MainActivity;
 import com.jiang.launcher.utils.AnimUtils;
 import com.jiang.launcher.utils.LogUtil;
-import com.jiang.launcher.utils.Tools;
+import com.jiang.launcher.views.TitleView;
 
 /**
  * Created by  jiang
@@ -32,7 +32,15 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
     ImageView back_img;
     TextView back_txt;
 
+    LinearLayout setting;
+    ImageView setting_img;
+    TextView setting_txt;
+
+    TitleView titleview;
+
     RelativeLayout home1, home2, home3, home4;
+
+    boolean toolbar_show = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,6 +62,12 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
         back_img = (ImageView) findViewById(R.id.back_img);
         back_txt = (TextView) findViewById(R.id.back_txt);
 
+        setting = (LinearLayout) findViewById(R.id.setting);
+        setting_img = (ImageView) findViewById(R.id.setting_img);
+        setting_txt = (TextView) findViewById(R.id.setting_txt);
+
+        titleview = (TitleView) findViewById(R.id.titleview);
+
     }
 
     private void initeven() {
@@ -63,12 +77,16 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
         home3.setOnClickListener(this);
         home4.setOnClickListener(this);
 
+        back.setOnClickListener(this);
+        setting.setOnClickListener(this);
+
         home1.setOnFocusChangeListener(this);
         home2.setOnFocusChangeListener(this);
         home3.setOnFocusChangeListener(this);
         home4.setOnFocusChangeListener(this);
-        back.setOnFocusChangeListener(this);
 
+        back.setOnFocusChangeListener(this);
+        setting.setOnFocusChangeListener(this);
 
     }
 
@@ -86,9 +104,21 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
 
                     break;
             case KeyEvent.KEYCODE_DPAD_UP:
+                if (!toolbar_show) {
+                    toolbar_view.setVisibility(View.VISIBLE);
+                    AnimUtils.animupnum(this, toolbar_view, -42, 0);
+                    AnimUtils.animupnum(this, titleview, 0, -42);
+                    toolbar_show = true;
+                }
                 LogUtil.e(TAG, "上");
                 return false;
             case KeyEvent.KEYCODE_DPAD_DOWN:
+                if (toolbar_show) {
+                    AnimUtils.animupnum(this, toolbar_view, 0, -42);
+                    AnimUtils.animupnum(this, titleview, -42, 0);
+                    toolbar_view.setVisibility(View.GONE);
+                    toolbar_show = false;
+                }
                 LogUtil.e(TAG, "下");
                 return false;
             case KeyEvent.KEYCODE_DPAD_LEFT:
@@ -104,6 +134,11 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.back:
+                break;
+            case R.id.setting:
+                startActivity(new Intent(this,Setting_Activity.class));
+                break;
             case R.id.home_1:
                 break;
             case R.id.home_2:
@@ -117,25 +152,27 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
         }
     }
 
-    View lastview;
 
     @Override
     public void onFocusChange(View view, boolean b) {
-        if (view==back){
-            LogUtil.e(TAG,"返回"+b);
-        }
 
-        if (lastview != back && view == back && b) {
-            AnimUtils.animupnum(toolbar_view, Tools.dp2px(this, 0));
-        } else if (lastview == back && view != back) {
-            AnimUtils.animupnum(toolbar_view, Tools.dp2px(this, -84));
-        }
-
+        //得到焦点
         if (b) {
+            if (view==setting){
+                setting_txt.setTextColor(getResources().getColor(R.color.white));
+            }
+            if (view==back){
+                back_txt.setTextColor(getResources().getColor(R.color.white));
+            }
             enlargeAnim(view);
         } else {
+            if (view==setting){
+                setting_txt.setTextColor(getResources().getColor(R.color.gray));
+            }
+            if (view==back){
+                back_txt.setTextColor(getResources().getColor(R.color.gray));
+            }
             reduceAnim(view);
         }
-        lastview = view;
     }
 }

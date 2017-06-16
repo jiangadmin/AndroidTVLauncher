@@ -9,7 +9,9 @@ import com.jiang.launcher.R;
 import com.jiang.launcher.adapter.AppAdapter;
 import com.jiang.launcher.features.app.AppDataManage;
 import com.jiang.launcher.model.AppBean;
+import com.jiang.launcher.utils.LogUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,6 +27,7 @@ public class APPList_Activity extends AppCompatActivity {
 
     private GridView mGridView;
     private List<AppBean> mAppList;
+    private List<AppBean> showlist =new ArrayList<>();
     private AppAdapter mAdapter;
 
     @Override
@@ -38,14 +41,22 @@ public class APPList_Activity extends AppCompatActivity {
     private void initview() {
         mGridView = (GridView) findViewById(R.id.app_grid);
 
-
     }
+
+    //能显示的程序包名
+    String packagename = "com.jiang.launcher";
 
     private void initeven() {
         AppDataManage getAppInstance = new AppDataManage(this);
         mAppList = getAppInstance.getLaunchAppList();
-
-        mAdapter = new AppAdapter(this, mAppList);
+        for (int i = 0; i <mAppList.size() ; i++) {
+            if (packagename.indexOf(mAppList.get(i).getPackageName())!=-1){
+                showlist.add(mAppList.get(i));
+            }
+        }
+        mAdapter = new AppAdapter(this, showlist);
         mGridView.setAdapter(mAdapter);
+
+
     }
 }

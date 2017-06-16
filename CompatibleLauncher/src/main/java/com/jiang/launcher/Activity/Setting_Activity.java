@@ -24,7 +24,7 @@ import com.jiang.launcher.features.speedtest.SpeedTestActivity;
  * Purpose:TODO 控制台
  * update：
  */
-public class Setting_Activity extends AppCompatActivity implements View.OnClickListener {
+public class Setting_Activity extends Base_Activity implements View.OnClickListener {
     private static final String TAG = "Setting_Activity";
 
     private ImageButton mCleanGarbage;
@@ -71,6 +71,8 @@ public class Setting_Activity extends AppCompatActivity implements View.OnClickL
         mNetworkSpeed.setOnClickListener(this);
         mSysUpdate.setOnClickListener(this);
         mAutoRunManage.setOnClickListener(this);
+        
+
     }
 
     @Override
@@ -119,4 +121,6 @@ public class Setting_Activity extends AppCompatActivity implements View.OnClickL
                 break;
         }
     }
+
+
 }

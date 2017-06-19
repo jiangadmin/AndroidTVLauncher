@@ -26,12 +26,10 @@ import com.jiang.launcher.utils.LogUtil;
 public class Base_Activity extends AppCompatActivity  {
     private static final String TAG = "Base_Activity";
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
 
     private View mCurrentView;
 
@@ -50,10 +48,6 @@ public class Base_Activity extends AppCompatActivity  {
 
     public View getCurrentView() {
         return mCurrentView;
-    }
-
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        return false;
     }
 
     public void requestInitFocus(){

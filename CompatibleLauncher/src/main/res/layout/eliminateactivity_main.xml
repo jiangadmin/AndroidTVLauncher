@@ -3,17 +3,16 @@
     android:layout_width="350dp"
     android:layout_height="350dp"
     android:orientation="vertical"
-     >
+    tools:context=".features.eliminateprocess.EliminateMainActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp" >
+        android:layout_height="300dp">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
             android:id="@+id/clearing_layout"
-             >
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
 
             <ImageView
                 android:layout_width="90dp"
@@ -22,27 +21,27 @@
                 android:src="@drawable/dialog_center_img" />
 
             <ImageView
+                android:id="@+id/eliminate_roundimg"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:layout_centerInParent="true"
-                android:id="@+id/eliminate_roundimg"
                 android:src="@drawable/dialog_center_img" />
 
             <TextView
+                android:id="@+id/all_percent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textColor="#FFFFFF"
-                android:id="@+id/all_percent"
                 android:textSize="30dp" />
         </RelativeLayout>
 
         <LinearLayout
+            android:id="@+id/clear_endlayout"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:orientation="vertical"
-            android:visibility="gone"
-            android:id="@+id/clear_endlayout" >
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -54,12 +53,12 @@
                 android:textSize="25dp" />
 
             <TextView
+                android:id="@+id/increase_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
                 android:text="3.97%"
-                android:id="@+id/increase_speed"
                 android:textColor="#FFFFFF"
                 android:textSize="35dp" />
 
@@ -81,24 +80,24 @@
                 android:textSize="25dp" />
 
             <TextView
+                android:id="@+id/relase_memory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
                 android:text="56.35MB"
-                android:id="@+id/relase_memory"
                 android:textColor="#FFFFFF"
                 android:textSize="35dp" />
         </LinearLayout>
     </FrameLayout>
 
     <Button
+        android:id="@+id/start_killtask"
         android:layout_width="140dp"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/btn_clear_infound"
         android:text="正在清理"
-        android:id="@+id/start_killtask"
         android:textColor="#FFFFFF" />
 
 </LinearLayout>

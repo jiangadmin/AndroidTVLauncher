@@ -1,4 +1,4 @@
-package com.jiang.launcher.Activity;
+package com.jiang.launcher.Activity.Setting;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.jiang.launcher.Activity.Base_Activity;
 import com.jiang.launcher.R;
 import com.jiang.launcher.features.app.AppAutoRun;
 import com.jiang.launcher.features.app.AppUninstall;

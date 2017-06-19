@@ -5,7 +5,7 @@
     android:paddingLeft="150dp"
     android:paddingRight="150dp"
     android:paddingTop="50dp"
-    tools:context="com.kangzizhuang.networkandbluetooth.MainActivity">
+    tools:context=".features.wifi.WifiActivity">
 
     <TextView
         android:id="@+id/nandb_tittle"

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+
+    <com.jiang.launcher.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:text="WIFI 热点"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/sel_focus"
+            android:focusable="true" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/about_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网络名称(SSID)"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <EditText
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:layout_marginTop="10dp"
+                android:id="@+id/wifi_hotspot_name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sel_focus" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密码"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <EditText
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:layout_marginTop="10dp"
+                android:id="@+id/wifi_hotspot_pwd"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sel_focus" />
+
+            <Button
+                android:focusable="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/wifi_hotspot_submit"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_finishclear"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+    </LinearLayout>
+</LinearLayout>

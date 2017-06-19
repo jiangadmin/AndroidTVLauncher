@@ -10,10 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.jiang.launcher.Activity.Setting.Setting_Activity;
 import com.jiang.launcher.R;
 import com.jiang.launcher.main.MainActivity;
 import com.jiang.launcher.utils.AnimUtils;
-import com.jiang.launcher.utils.LogUtil;
 import com.jiang.launcher.views.TitleView;
 
 /**
@@ -110,7 +110,6 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
                     AnimUtils.animupnum(this, titleview, 0, -42);
                     toolbar_show = true;
                 }
-                LogUtil.e(TAG, "上");
                 return false;
             case KeyEvent.KEYCODE_DPAD_DOWN:
                 if (toolbar_show) {
@@ -119,13 +118,10 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
                     toolbar_view.setVisibility(View.GONE);
                     toolbar_show = false;
                 }
-                LogUtil.e(TAG, "下");
                 return false;
             case KeyEvent.KEYCODE_DPAD_LEFT:
-                LogUtil.e(TAG, "左");
                 return false;
             case KeyEvent.KEYCODE_DPAD_RIGHT:
-                LogUtil.e(TAG, "右");
                 return false;
         }
         return true;

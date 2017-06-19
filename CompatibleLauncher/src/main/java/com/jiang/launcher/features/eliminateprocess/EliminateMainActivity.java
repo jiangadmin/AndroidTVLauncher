@@ -128,7 +128,6 @@ public class EliminateMainActivity extends Activity {
 
             @Override
             public void run() {
-                // TODO Auto-generated method stub
                 while (ISRound) {
                     allpercent = (int) ((float) (memorySurPlus / totalMemory) * 100);
                     handler.sendEmptyMessage(PERCENT_CHANGE);
@@ -139,7 +138,6 @@ public class EliminateMainActivity extends Activity {
 
             @Override
             public void run() {
-                // TODO Auto-generated method stub
                 getRunningApp();
                 TaskInfoProvider taskInfoProvider = new TaskInfoProvider(
                         EliminateMainActivity.this);
@@ -179,7 +177,6 @@ public class EliminateMainActivity extends Activity {
             initialMemory = Integer.valueOf(arrayOfString[1]);
             fileInputStream.close();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return (float) (initialMemory / 1024);

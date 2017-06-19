@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.jiang.launcher">
+    package="com.jiang.launcher">
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--系统启动完成广播接收器-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name="com.jiang.launcher.LauncherApp"
@@ -27,11 +30,12 @@
         android:theme="@style/StartTheme">
 
         <!--主页-->
-        <activity android:name=".Activity.Home_Activity"
+        <activity
+            android:name=".Activity.Home_Activity"
             android:screenOrientation="landscape">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
 
                 <!-- 增加lancher配置-->
                 <category android:name="android.intent.category.HOME" />
@@ -40,36 +44,62 @@
         </activity>
 
         <!--APP列表-->
-        <activity android:name=".Activity.APPList_Activity"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".Activity.APPList_Activity"
+            android:screenOrientation="landscape" />
 
         <!--控制台-->
-        <activity android:name=".Activity.Setting_Activity"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".Activity.Setting.Setting_Activity"
+            android:screenOrientation="landscape" />
 
-
+        <!--WIFI 热点-->
+        <activity
+            android:name=".Activity.Setting.WifiHotspot_Activity"
+            android:screenOrientation="landscape" />
 
         <activity
-            android:screenOrientation="landscape"
-            android:name="com.jiang.launcher.main.MainActivity">
+            android:name="com.jiang.launcher.main.MainActivity"
+            android:screenOrientation="landscape">
 
         </activity>
 
 
-
-        <activity android:name="com.jiang.launcher.features.Ethernet"/>
-        <activity android:name="com.jiang.launcher.features.Bluetooth"/>
-        <activity android:name="com.jiang.launcher.features.setting.SettingCustom"/>
-        <activity android:name="com.jiang.launcher.features.app.AppUninstall"/>
-        <activity android:name="com.jiang.launcher.features.app.AppAutoRun"/>
-        <activity android:name="com.jiang.launcher.features.speedtest.SpeedTestActivity"/>
+        <activity android:name="com.jiang.launcher.features.Ethernet" />
+        <activity android:name="com.jiang.launcher.features.Bluetooth" />
+        <activity android:name="com.jiang.launcher.features.setting.SettingCustom" />
+        <activity android:name="com.jiang.launcher.features.app.AppUninstall" />
+        <activity android:name="com.jiang.launcher.features.app.AppAutoRun" />
+        <activity android:name="com.jiang.launcher.features.speedtest.SpeedTestActivity" />
         <activity
             android:name="com.jiang.launcher.features.eliminateprocess.EliminateMainActivity"
-            android:theme="@android:style/Theme.Dialog"/>
+            android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name="com.jiang.launcher.features.garbageclear.GarbageClear"
-            android:theme="@android:style/Theme.Dialog"/>
-        <activity android:name="com.jiang.launcher.features.wifi.WifiActivity"/>
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name="com.jiang.launcher.features.wifi.WifiActivity" />
+
+        <!--开机广播接收-->
+        <receiver android:name=".Receiver.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!--关机广播接收-->
+        <receiver android:name=".Receiver.ShutdownReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+
+        <!--亮屏 息屏-->
+        <receiver android:name=".Receiver.ScreenStatusReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

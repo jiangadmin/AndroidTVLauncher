@@ -8,127 +8,132 @@
         android:layout_width="match_parent"
         android:layout_height="42dp" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:gravity="center">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/setting_uninstall"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_uninstall"
+            android:layout_above="@+id/setting_autorun"
+            android:layout_alignRight="@+id/setting_gogogo"
+            android:layout_alignEnd="@+id/setting_gogogo" />
 
-            <ImageButton
-                android:id="@+id/setting_uninstall"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_uninstall" />
+        <ImageButton
+            android:id="@+id/setting_gogogo"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/setting_uninstall"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_accelerate" />
 
-            <ImageButton
-                android:id="@+id/setting_accelerate"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_accelerate" />
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/setting_clean"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/setting_uninstall"
+            android:layout_toRightOf="@+id/setting_uninstall"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_clean" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/setting_autorun"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_autorun"
+            android:layout_below="@+id/setting_clean"
+            android:layout_toRightOf="@+id/setting_uninstall"
+            android:layout_toEndOf="@+id/setting_uninstall" />
 
-            <ImageButton
-                android:id="@+id/setting_clean"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_clean" />
-
-            <ImageButton
-                android:id="@+id/setting_autorun"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_autorun" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/setting_net"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_net" />
+        <ImageButton
+            android:id="@+id/setting_net"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_alignLeft="@+id/setting_net_speed"
+            android:layout_alignStart="@+id/setting_net_speed"
+            android:layout_below="@+id/setting_net_speed"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_net" />
 
 
-            <ImageButton
-                android:id="@+id/setting_net_speed"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_net_speed" />
+        <ImageButton
+            android:id="@+id/setting_net_speed"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_net_speed"
+            android:layout_below="@+id/setting_more"
+            android:layout_toRightOf="@+id/setting_clean"
+            android:layout_toEndOf="@+id/setting_clean" />
 
-            <ImageButton
-                android:id="@+id/setting_more"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_more" />
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/setting_more"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_more"
+            android:layout_alignTop="@+id/setting_clean"
+            android:layout_toRightOf="@+id/setting_clean"
+            android:layout_toEndOf="@+id/setting_clean" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/setting_update"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_update"
+            android:layout_above="@+id/setting_file"
+            android:layout_toRightOf="@+id/setting_net_speed"
+            android:layout_toEndOf="@+id/setting_net_speed" />
 
-            <ImageButton
-                android:id="@+id/setting_update"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_update" />
+        <ImageButton
+            android:id="@+id/setting_file"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/setting_more"
+            android:layout_toEndOf="@+id/setting_net"
+            android:layout_toRightOf="@+id/setting_net"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_file" />
 
-            <ImageButton
-                android:id="@+id/setting_file"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_file" />
-
-            <ImageButton
-                android:id="@+id/setting_about"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:background="@drawable/sel_main_focus"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/setting_about" />
-        </LinearLayout>
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/setting_about"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/setting_net_speed"
+            android:layout_toEndOf="@+id/setting_net"
+            android:layout_toRightOf="@+id/setting_net"
+            android:background="@drawable/sel_main_focus"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_about" />
+    </RelativeLayout>
 
 
 </LinearLayout>

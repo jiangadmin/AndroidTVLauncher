@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.jiang.launcher.Activity.Base_Activity;
 import com.jiang.launcher.R;
@@ -31,9 +31,9 @@ import com.jiang.launcher.utils.Loading;
 public class Setting_Activity extends Base_Activity implements View.OnClickListener {
     private static final String TAG = "Setting_Activity";
 
-    private ImageButton mAppUninstall;
+    //卸载应用 加速  清理  自启动
+    ImageButton uninstall,gogogo;
     private ImageButton mCleanGarbage;
-    private ImageButton mCleanMemory;
     private ImageButton mNetworkSetting;
     private ImageButton mOtherSetting;
     private ImageButton mNetworkSpeed;
@@ -55,7 +55,7 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         DisplayMetrics metric = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metric);
 
-        mAppUninstall = (ImageButton) findViewById(R.id.setting_uninstall);
+        uninstall = (ImageButton) findViewById(R.id.setting_uninstall);
         mNetworkSetting = (ImageButton) findViewById(R.id.setting_net);
         mOtherSetting = (ImageButton) findViewById(R.id.setting_more);
         mNetworkSpeed = (ImageButton) findViewById(R.id.setting_net_speed);
@@ -63,24 +63,28 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         mFileManage = (ImageButton) findViewById(R.id.setting_file);
         mAbout = (ImageButton) findViewById(R.id.setting_about);
         mCleanGarbage = (ImageButton) findViewById(R.id.setting_clean);
-        mCleanMemory = (ImageButton) findViewById(R.id.setting_accelerate);
+        gogogo = (ImageButton) findViewById(R.id.setting_gogogo);
         mAutoRunManage = (ImageButton) findViewById(R.id.setting_autorun);
 
-        LinearLayout.LayoutParams ll_uninstall = (LinearLayout.LayoutParams) mAppUninstall.getLayoutParams();
+        RelativeLayout.LayoutParams ll_uninstall = (RelativeLayout.LayoutParams) uninstall.getLayoutParams();
 
-        ll_uninstall.width = metric.widthPixels / 5;
-        ll_uninstall.height = metric.heightPixels / 9*2;
+        ll_uninstall.width = metric.widthPixels / 4;
+        ll_uninstall.height = metric.heightPixels / 4;
 
-        mAppUninstall.setLayoutParams(ll_uninstall);
+        uninstall.setLayoutParams(ll_uninstall);
+        gogogo.setLayoutParams(ll_uninstall);
+        mCleanGarbage.setLayoutParams(ll_uninstall);
+        mAutoRunManage.setLayoutParams(ll_uninstall);
+
     }
 
     private void initeven() {
 
+        uninstall.setOnClickListener(this);
+        gogogo.setOnClickListener(this);
         mCleanGarbage.setOnClickListener(this);
-        mCleanMemory.setOnClickListener(this);
         mAbout.setOnClickListener(this);
         mOtherSetting.setOnClickListener(this);
-        mAppUninstall.setOnClickListener(this);
         mNetworkSetting.setOnClickListener(this);
         mFileManage.setOnClickListener(this);
         mNetworkSpeed.setOnClickListener(this);

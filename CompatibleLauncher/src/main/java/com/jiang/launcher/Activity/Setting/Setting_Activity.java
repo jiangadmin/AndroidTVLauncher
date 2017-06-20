@@ -72,6 +72,9 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         ll_uninstall.height = metric.heightPixels / 9*2;
 
         mAppUninstall.setLayoutParams(ll_uninstall);
+        mCleanGarbage.setLayoutParams(ll_uninstall);
+        mCleanMemory.setLayoutParams(ll_uninstall);
+        mAutoRunManage.setLayoutParams(ll_uninstall);
     }
 
     private void initeven() {

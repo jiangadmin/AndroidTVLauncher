@@ -65,6 +65,7 @@ public class AppAdapter extends BaseAdapter {
             mHolder = new Holder();
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_app, null);
             mHolder.name = (TextView) convertView.findViewById(R.id.item_app_name);
+            mHolder.packagename = (TextView) convertView.findViewById(R.id.item_app_package_name);
             mHolder.icon = (ImageView) convertView.findViewById(R.id.item_app_icon);
             mHolder.bg = convertView.findViewById(R.id.item_app_bg);
             convertView.setTag(mHolder);
@@ -76,6 +77,7 @@ public class AppAdapter extends BaseAdapter {
         AppBean appBean = mAppBeanList.get(position);
         mHolder.icon.setImageDrawable(appBean.getIcon());
         mHolder.name.setText(appBean.getName());
+        mHolder.packagename.setText(appBean.getPackageName());
 
         final int pos = position;
         convertView.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +94,7 @@ public class AppAdapter extends BaseAdapter {
     }
 
     public class Holder {
-        private TextView name;
+        private TextView name,packagename;
         private ImageView icon;
         private View bg;
     }

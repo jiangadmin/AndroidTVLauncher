@@ -157,6 +157,7 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
                 startActivity(new Intent(this, APPList_Activity.class));
                 break;
             case R.id.home_3:
+                startActivity(new Intent(getPackageManager().getLaunchIntentForPackage("com.joyodream.jiji")));
                 break;
             case R.id.home_4:
                 startActivity(new Intent(this, MainActivity.class));

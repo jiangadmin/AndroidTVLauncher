@@ -3,6 +3,7 @@ package com.jiang.launcher.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ import com.jiang.launcher.Activity.Setting.Setting_Activity;
 import com.jiang.launcher.R;
 import com.jiang.launcher.main.MainActivity;
 import com.jiang.launcher.utils.AnimUtils;
+import com.jiang.launcher.utils.LogUtil;
 import com.jiang.launcher.views.TitleView;
 
 /**
@@ -68,6 +70,20 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
 
         titleview = (TitleView) findViewById(R.id.titleview);
 
+        //获取屏幕宽度
+        DisplayMetrics metric = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metric);
+
+        LinearLayout.LayoutParams ll_home = (LinearLayout.LayoutParams) home1.getLayoutParams();
+
+        ll_home.height = metric.heightPixels / 2;
+
+        ll_home.width = metric.widthPixels / 6;
+
+        home1.setLayoutParams(ll_home);
+        home2.setLayoutParams(ll_home);
+        home3.setLayoutParams(ll_home);
+        home4.setLayoutParams(ll_home);
     }
 
     private void initeven() {
@@ -98,11 +114,11 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
+            case KeyEvent.KEYCODE_HOME:
+                LogUtil.e(TAG, "点击了HOME键");
+                return true;
             case KeyEvent.KEYCODE_BACK:
-                //长按
-                if (event.getRepeatCount() == 3)
-
-                    break;
+                return true;
             case KeyEvent.KEYCODE_DPAD_UP:
                 if (!toolbar_show) {
                     toolbar_view.setVisibility(View.VISIBLE);
@@ -133,7 +149,7 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
             case R.id.back:
                 break;
             case R.id.setting:
-                startActivity(new Intent(this,Setting_Activity.class));
+                startActivity(new Intent(this, Setting_Activity.class));
                 break;
             case R.id.home_1:
                 break;
@@ -154,18 +170,18 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
 
         //得到焦点
         if (b) {
-            if (view==setting){
+            if (view == setting) {
                 setting_txt.setTextColor(getResources().getColor(R.color.white));
             }
-            if (view==back){
+            if (view == back) {
                 back_txt.setTextColor(getResources().getColor(R.color.white));
             }
             enlargeAnim(view);
         } else {
-            if (view==setting){
+            if (view == setting) {
                 setting_txt.setTextColor(getResources().getColor(R.color.gray));
             }
-            if (view==back){
+            if (view == back) {
                 back_txt.setTextColor(getResources().getColor(R.color.gray));
             }
             reduceAnim(view);

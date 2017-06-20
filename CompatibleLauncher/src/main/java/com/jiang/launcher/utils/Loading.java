@@ -36,8 +36,34 @@ public class Loading {
                 if (progressDialog == null) {
                     progressDialog = LoadingDialog.create(activity, message);
                 }
-                progressDialog.setCancelable(false);
+                progressDialog.setCancelable(true);
                 progressDialog.show();
+            }
+        }
+    }
+
+
+
+    public static void showmessage(Context context, String message) {
+        Activity activity = (Activity) context;
+        if (activity != null) {
+            if (!activity.isFinishing()) {
+
+                while (activity.getParent() != null) {
+                    activity = activity.getParent();
+                }
+                if (progressDialog == null) {
+                    progressDialog = LoadingDialog.create(activity, message);
+                }
+                progressDialog.setCancelable(true);
+                progressDialog.show();
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                    }
+                }).run();
             }
         }
     }

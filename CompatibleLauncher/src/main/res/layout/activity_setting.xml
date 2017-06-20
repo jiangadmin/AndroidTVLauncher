@@ -21,8 +21,8 @@
 
             <ImageButton
                 android:id="@+id/setting_uninstall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"
@@ -30,8 +30,8 @@
 
             <ImageButton
                 android:id="@+id/setting_accelerate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"
@@ -45,8 +45,8 @@
 
             <ImageButton
                 android:id="@+id/setting_clean"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"
@@ -54,8 +54,8 @@
 
             <ImageButton
                 android:id="@+id/setting_autorun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"
@@ -69,8 +69,8 @@
 
             <ImageButton
                 android:id="@+id/setting_net"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"
@@ -79,8 +79,8 @@
 
             <ImageButton
                 android:id="@+id/setting_net_speed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"
@@ -88,8 +88,8 @@
 
             <ImageButton
                 android:id="@+id/setting_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"
@@ -103,8 +103,8 @@
 
             <ImageButton
                 android:id="@+id/setting_update"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"
@@ -112,8 +112,8 @@
 
             <ImageButton
                 android:id="@+id/setting_file"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"
@@ -121,8 +121,8 @@
 
             <ImageButton
                 android:id="@+id/setting_about"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:background="@drawable/sel_main_focus"
                 android:focusable="true"
                 android:scaleType="fitXY"

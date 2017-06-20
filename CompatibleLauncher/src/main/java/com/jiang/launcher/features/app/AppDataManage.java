@@ -36,7 +36,7 @@ public class AppDataManage {
         while (true) {
             if (!localIterator.hasNext())
                 break;
-            ResolveInfo localResolveInfo = (ResolveInfo) localIterator.next();
+            ResolveInfo localResolveInfo =  localIterator.next();
             AppBean localAppBean = new AppBean();
             localAppBean.setIcon(localResolveInfo.activityInfo.loadIcon(localPackageManager));
             localAppBean.setName(localResolveInfo.activityInfo.loadLabel(localPackageManager).toString());
@@ -53,7 +53,7 @@ public class AppDataManage {
             } catch (NameNotFoundException e) {
                 e.printStackTrace();
             }
-            if (!localAppBean.getPackageName().equals("com.jacky.launcher")) {
+            if (!localAppBean.getPackageName().equals("com.jiang.launcher")) {
                 localArrayList.add(localAppBean);
             }
         }

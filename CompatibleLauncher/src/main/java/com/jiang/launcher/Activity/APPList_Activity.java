@@ -54,9 +54,8 @@ public class APPList_Activity extends AppCompatActivity {
                 showlist.add(mAppList.get(i));
             }
         }
-        mAdapter = new AppAdapter(this, showlist);
+        mAdapter = new AppAdapter(this, mAppList);
         mGridView.setAdapter(mAdapter);
-
 
     }
 }

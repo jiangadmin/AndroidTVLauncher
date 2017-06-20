@@ -4,18 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import com.jiang.launcher.Activity.Base_Activity;
 import com.jiang.launcher.R;
+import com.jiang.launcher.Servlet.Update_Servlet;
 import com.jiang.launcher.features.app.AppAutoRun;
 import com.jiang.launcher.features.app.AppUninstall;
 import com.jiang.launcher.features.eliminateprocess.EliminateMainActivity;
 import com.jiang.launcher.features.garbageclear.GarbageClear;
 import com.jiang.launcher.features.setting.SettingCustom;
 import com.jiang.launcher.features.speedtest.SpeedTestActivity;
+import com.jiang.launcher.utils.Loading;
 
 /**
  * Created by  jiang
@@ -28,9 +31,9 @@ import com.jiang.launcher.features.speedtest.SpeedTestActivity;
 public class Setting_Activity extends Base_Activity implements View.OnClickListener {
     private static final String TAG = "Setting_Activity";
 
+    private ImageButton mAppUninstall;
     private ImageButton mCleanGarbage;
     private ImageButton mCleanMemory;
-    private ImageButton mAppUninstall;
     private ImageButton mNetworkSetting;
     private ImageButton mOtherSetting;
     private ImageButton mNetworkSpeed;
@@ -48,6 +51,10 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
     }
 
     private void initview() {
+        //获取屏幕宽度
+        DisplayMetrics metric = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metric);
+
         mAppUninstall = (ImageButton) findViewById(R.id.setting_uninstall);
         mNetworkSetting = (ImageButton) findViewById(R.id.setting_net);
         mOtherSetting = (ImageButton) findViewById(R.id.setting_more);
@@ -58,6 +65,13 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         mCleanGarbage = (ImageButton) findViewById(R.id.setting_clean);
         mCleanMemory = (ImageButton) findViewById(R.id.setting_accelerate);
         mAutoRunManage = (ImageButton) findViewById(R.id.setting_autorun);
+
+        LinearLayout.LayoutParams ll_uninstall = (LinearLayout.LayoutParams) mAppUninstall.getLayoutParams();
+
+        ll_uninstall.width = metric.widthPixels / 5;
+        ll_uninstall.height = metric.heightPixels / 9*2;
+
+        mAppUninstall.setLayoutParams(ll_uninstall);
     }
 
     private void initeven() {
@@ -72,7 +86,7 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         mNetworkSpeed.setOnClickListener(this);
         mSysUpdate.setOnClickListener(this);
         mAutoRunManage.setOnClickListener(this);
-        
+
 
     }
 
@@ -101,6 +115,8 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
             case R.id.setting_file:
                 break;
             case R.id.setting_update:
+                Loading.show(this, "检查更新");
+                new Update_Servlet().execute();
                 break;
             case R.id.setting_net:
                 jumpIntent = new Intent(this, SettingCustom.class);

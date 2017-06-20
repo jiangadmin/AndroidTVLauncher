@@ -28,81 +28,78 @@
             android:layout_height="match_parent"
             android:layout_weight="3" />
 
-        <RelativeLayout
-            android:id="@+id/setting_custom_rl"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_weight="1"
-            android:background="@drawable/about_bg">
+            android:background="@drawable/about_bg"
+            android:orientation="vertical"
+            android:paddingBottom="15dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
 
-            <LinearLayout
-                android:layout_centerInParent="true"
-                android:layout_width="500dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            <TextView
+                android:id="@+id/setting_custom_wifi"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/sel_focus"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="无线网络"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/setting_custom_wifi"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/sel_focus"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:text="无线网络"
-                    android:textColor="@android:color/white"
-                    android:textSize="25sp" />
+            <TextView
+                android:id="@+id/setting_custom_ethernet"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/sel_focus"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="有线网络"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/setting_custom_ethernet"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/sel_focus"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:text="有线网络"
-                    android:textColor="@android:color/white"
-                    android:textSize="25sp" />
+            <TextView
+                android:id="@+id/setting_custom_bluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/sel_focus"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="蓝牙"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/setting_custom_bluetooth"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/sel_focus"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:text="蓝牙"
-                    android:textColor="@android:color/white"
-                    android:textSize="25sp" />
+            <TextView
+                android:id="@+id/setting_custom_net_detection"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/sel_focus"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="网络测速"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/setting_custom_net_detection"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/sel_focus"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:text="网络测速"
-                    android:textColor="@android:color/white"
-                    android:textSize="25sp" />
+            <TextView
+                android:id="@+id/setting_custom_wifi_hotspot"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/sel_focus"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="WIFI 热点"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/setting_custom_wifi_hotspot"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/sel_focus"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:text="WIFI 热点"
-                    android:textColor="@android:color/white"
-                    android:textSize="25sp" />
-
-            </LinearLayout>
-        </RelativeLayout>
+        </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"

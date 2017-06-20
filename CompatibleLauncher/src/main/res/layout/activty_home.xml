@@ -13,18 +13,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="80dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <RelativeLayout
+            android:layout_margin="15dp"
             android:id="@+id/home_1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:focusable="true">
 
             <ImageView
@@ -56,14 +53,10 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_marginRight="15dp"
+            android:layout_margin="15dp"
             android:id="@+id/home_2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:focusable="true">
 
             <ImageView
@@ -95,14 +88,10 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_marginLeft="15dp"
             android:id="@+id/home_3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
             android:focusable="true">
 
             <ImageView
@@ -132,12 +121,9 @@
 
         <RelativeLayout
             android:id="@+id/home_4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="30dp"
-            android:layout_marginRight="45dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
             android:focusable="true">
 
             <ImageView
@@ -209,6 +195,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
             android:focusable="true"
             android:gravity="center"
             android:orientation="horizontal">

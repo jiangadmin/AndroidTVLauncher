@@ -353,5 +353,22 @@ public final class Tools {
         return px;
     }
 
+    /**
+     * 检测APP是否安装
+     * @param context
+     * @param uri
+     * @return
+     */
+    public static boolean isAppInstalled(Context context, String uri) {
+        PackageManager pm = context.getPackageManager();
+        boolean installed = false;
+        try {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
+            installed = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            installed = false;
+        }
+        return installed;
+    }
 
 }

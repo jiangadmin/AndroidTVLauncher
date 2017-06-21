@@ -1,21 +1,26 @@
-package com.jiang.launcher.Activity;
+package com.jiang.launcher.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.jiang.launcher.Activity.Setting.Setting_Activity;
 import com.jiang.launcher.R;
+import com.jiang.launcher.activity.setting.Setting_Activity;
+import com.jiang.launcher.dialog.Password_Dialog;
+import com.jiang.launcher.entity.PackageName;
 import com.jiang.launcher.main.MainActivity;
 import com.jiang.launcher.utils.AnimUtils;
 import com.jiang.launcher.utils.LogUtil;
+import com.jiang.launcher.utils.Tools;
 import com.jiang.launcher.views.TitleView;
 
 /**
@@ -118,6 +123,7 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
                 LogUtil.e(TAG, "点击了HOME键");
                 return true;
             case KeyEvent.KEYCODE_BACK:
+
                 return true;
             case KeyEvent.KEYCODE_DPAD_UP:
                 if (!toolbar_show) {
@@ -147,20 +153,34 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.back:
+                Password_Dialog dialog = new Password_Dialog(this, R.style.myDialogTheme);
+                Display display = getWindowManager().getDefaultDisplay();
+                WindowManager.LayoutParams lp = dialog.getWindow().getAttributes();
+                lp.width = display.getWidth() / 2; //设置宽度
+                lp.height = display.getHeight() / 4;
+                dialog.getWindow().setAttributes(lp);
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.show();
                 break;
             case R.id.setting:
                 startActivity(new Intent(this, Setting_Activity.class));
                 break;
+            //同步院线
             case R.id.home_1:
 
                 break;
+            //全网影视
             case R.id.home_2:
                 startActivity(new Intent(this, APPList_Activity.class));
                 break;
+            //电视直播
             case R.id.home_3:
-                //直接启动 HDP直播
-                startActivity(new Intent(getPackageManager().getLaunchIntentForPackage("hdpfans.com")));
+                //判断是否安装 HDP直播
+                if (Tools.isAppInstalled(this, PackageName.HDP))
+                    //直接启动 HDP直播
+                    startActivity(new Intent(getPackageManager().getLaunchIntentForPackage(PackageName.HDP)));
                 break;
+            //
             case R.id.home_4:
                 startActivity(new Intent(this, MainActivity.class));
                 break;

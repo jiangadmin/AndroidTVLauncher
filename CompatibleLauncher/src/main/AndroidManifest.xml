@@ -31,7 +31,7 @@
 
         <!--主页-->
         <activity
-            android:name=".Activity.Home_Activity"
+            android:name=".activity.Home_Activity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,17 +45,17 @@
 
         <!--APP列表-->
         <activity
-            android:name=".Activity.APPList_Activity"
+            android:name=".activity.APPList_Activity"
             android:screenOrientation="landscape" />
 
         <!--控制台-->
         <activity
-            android:name=".Activity.Setting.Setting_Activity"
+            android:name=".activity.setting.Setting_Activity"
             android:screenOrientation="landscape" />
 
         <!--WIFI 热点-->
         <activity
-            android:name=".Activity.Setting.WifiHotspot_Activity"
+            android:name=".activity.setting.WifiHotspot_Activity"
             android:screenOrientation="landscape" />
 
         <activity
@@ -74,27 +74,30 @@
         <activity
             android:name="com.jiang.launcher.features.eliminateprocess.EliminateMainActivity"
             android:theme="@android:style/Theme.Dialog" />
+
+
+        <!--清理后台-->
         <activity
-            android:name="com.jiang.launcher.features.garbageclear.GarbageClear"
+            android:name=".features.garbageclear.GarbageClear"
             android:theme="@android:style/Theme.Dialog" />
+
         <activity android:name="com.jiang.launcher.features.wifi.WifiActivity" />
 
-        <!--开机广播接收-->
-        <receiver android:name=".Receiver.BootCompletedReceiver">
+        <receiver android:name=".receiver.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <!--关机广播接收-->
-        <receiver android:name=".Receiver.ShutdownReceiver">
+        <receiver android:name=".receiver.ShutdownReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_SHUTDOWN" />
             </intent-filter>
         </receiver>
 
         <!--亮屏 息屏-->
-        <receiver android:name=".Receiver.ScreenStatusReceiver">
+        <receiver android:name=".receiver.ScreenStatusReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.SCREEN_ON" />
                 <action android:name="android.intent.action.SCREEN_OFF" />

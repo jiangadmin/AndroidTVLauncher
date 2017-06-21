@@ -1,4 +1,4 @@
-package com.jiang.launcher.Activity.Setting;
+package com.jiang.launcher.activity.setting;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.jiang.launcher.Activity.Base_Activity;
+import com.jiang.launcher.activity.Base_Activity;
 import com.jiang.launcher.R;
-import com.jiang.launcher.Servlet.Update_Servlet;
+import com.jiang.launcher.servlet.Update_Servlet;
 import com.jiang.launcher.features.app.AppAutoRun;
 import com.jiang.launcher.features.app.AppUninstall;
 import com.jiang.launcher.features.eliminateprocess.EliminateMainActivity;
@@ -89,7 +89,6 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         mNetworkSpeed.setOnClickListener(this);
         mSysUpdate.setOnClickListener(this);
         mAutoRunManage.setOnClickListener(this);
-
 
     }
 

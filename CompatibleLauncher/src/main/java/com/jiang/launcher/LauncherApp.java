@@ -4,8 +4,7 @@ import android.content.Context;
 import android.os.CountDownTimer;
 
 import com.jacky.common.app.BaseApp;
-import com.jiang.launcher.Receiver.ScreenStatusReceiver;
-import com.jiang.launcher.Servlet.Timing_Servlet;
+import com.jiang.launcher.servlet.Timing_Servlet;
 
 /**
  * Launcher Application

@@ -3,12 +3,12 @@
     android:layout_width="300dp"
     android:layout_height="250dp"
     android:padding="5dip"
-    tools:context="com.droid.garbageclear.GarbageClear" >
+    tools:context=".features.garbageclear.GarbageClear">
 
     <RelativeLayout
         android:id="@+id/found_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <Button
             android:id="@+id/start_found"
@@ -17,9 +17,9 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="15dp"
-            android:textSize="20dp"
             android:background="@drawable/btn_clear_infound"
-            android:text="@string/start_clear" />
+            android:text="@string/start_clear"
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,13 +34,13 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/center_line"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="-20dp" >
+            android:layout_marginBottom="-20dp">
 
             <TextView
                 android:id="@+id/garbage_size"
                 android:layout_width="wrap_content"
-                android:singleLine="true"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:text="0"
                 android:textColor="#FFFFFF"
                 android:textSize="80dp" />
@@ -63,10 +63,10 @@
             android:layout_centerInParent="true" />
 
         <TextView
+            android:id="@+id/file_path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/center_line"
-            android:id="@+id/file_path"
             android:textColor="#FFFFFF"
             android:textSize="10dp" />
 
@@ -75,17 +75,17 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="5dp"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/center_line"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
             android:background="#FFFFFF"
-            android:layout_marginTop="20dp" 
-            android:max="100"/>
+            android:max="100" />
     </RelativeLayout>
 
     <FrameLayout
         android:id="@+id/clear_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
+        android:layout_height="match_parent"
         android:visibility="gone">
 
         <ImageView
@@ -93,25 +93,26 @@
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/dialog_center_img"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:src="@drawable/dialog_center_img" />
 
         <ImageView
+            android:id="@+id/round_img"
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/round_img"
             android:layout_marginTop="10dp"
             android:src="@drawable/dialog_img" />
-        <Button 
+
+        <Button
+            android:id="@+id/start_clear"
             android:layout_width="150dp"
             android:layout_height="45dp"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginBottom="15dp"
             android:background="@drawable/btn_finishclear"
-            android:textSize="20dp"
             android:text="清理中"
-            android:id="@+id/start_clear"/>
+            android:textSize="20dp" />
     </FrameLayout>
 
 </RelativeLayout>

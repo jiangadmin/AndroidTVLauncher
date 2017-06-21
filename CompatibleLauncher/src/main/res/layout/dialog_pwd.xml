@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/about_bg"
+    android:gravity="center"
+    android:id="@+id/pwd_dialog_view"
+    tools:context=".dialog.Password_Dialog">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pwd_1"
+        android:layout_alignEnd="@+id/pwd_6"
+        android:layout_alignLeft="@+id/pwd_1"
+        android:layout_alignRight="@+id/pwd_6"
+        android:layout_alignStart="@+id/pwd_1"
+        android:layout_marginBottom="26dp"
+        android:gravity="center"
+        android:text="管理员密码"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/pwd_1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="13dp"
+        android:src="@drawable/ic_round" />
+
+    <ImageView
+        android:id="@+id/pwd_2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/pwd_1"
+        android:layout_toEndOf="@+id/pwd_1"
+        android:layout_toRightOf="@+id/pwd_1"
+        android:src="@drawable/ic_round" />
+
+    <ImageView
+        android:id="@+id/pwd_3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/pwd_2"
+        android:layout_toEndOf="@+id/pwd_2"
+        android:layout_toRightOf="@+id/pwd_2"
+        android:src="@drawable/ic_round" />
+
+    <ImageView
+        android:id="@+id/pwd_4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/pwd_3"
+        android:layout_toEndOf="@+id/pwd_3"
+        android:layout_toRightOf="@+id/pwd_3"
+        android:src="@drawable/ic_round" />
+
+    <ImageView
+        android:id="@+id/pwd_5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/pwd_4"
+        android:layout_toEndOf="@+id/pwd_4"
+        android:layout_toRightOf="@+id/pwd_4"
+        android:src="@drawable/ic_round" />
+
+    <ImageView
+        android:id="@+id/pwd_6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/pwd_5"
+        android:layout_toEndOf="@+id/pwd_5"
+        android:layout_toRightOf="@+id/pwd_5"
+        android:src="@drawable/ic_round" />
+
+
+</RelativeLayout>

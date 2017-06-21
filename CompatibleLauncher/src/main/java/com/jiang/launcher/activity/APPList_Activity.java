@@ -1,4 +1,4 @@
-package com.jiang.launcher.Activity;
+package com.jiang.launcher.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +9,6 @@ import com.jiang.launcher.R;
 import com.jiang.launcher.adapter.AppAdapter;
 import com.jiang.launcher.features.app.AppDataManage;
 import com.jiang.launcher.model.AppBean;
-import com.jiang.launcher.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class APPList_Activity extends AppCompatActivity {
 
     private GridView mGridView;
     private List<AppBean> mAppList;
-    private List<AppBean> showlist =new ArrayList<>();
+    private List<AppBean> showlist = new ArrayList<>();
     private AppAdapter mAdapter;
 
     @Override
@@ -48,12 +47,16 @@ public class APPList_Activity extends AppCompatActivity {
     private void initeven() {
         AppDataManage getAppInstance = new AppDataManage(this);
         mAppList = getAppInstance.getLaunchAppList();
-        for (int i = 0; i <mAppList.size() ; i++) {
-            if (packagename.indexOf(mAppList.get(i).getPackageName())!=-1){
-                showlist.add(mAppList.get(i));
-            }
+//        for (int i = 0; i <mAppList.size() ; i++) {
+//            if (packagename.indexOf(mAppList.get(i).getPackageName())!=-1){
+//                showlist.add(mAppList.get(i));
+//            }
+//        }
+
+        for (int i = 0; i < 10; i++) {
+            showlist.addAll(mAppList);
         }
-        mAdapter = new AppAdapter(this, mAppList);
+        mAdapter = new AppAdapter(this, showlist);
         mGridView.setAdapter(mAdapter);
         mGridView.setSmoothScrollbarEnabled(true);
 

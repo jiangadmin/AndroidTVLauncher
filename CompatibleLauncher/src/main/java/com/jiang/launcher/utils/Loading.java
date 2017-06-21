@@ -43,7 +43,6 @@ public class Loading {
     }
 
 
-
     public static void showmessage(Context context, String message) {
         Activity activity = (Activity) context;
         if (activity != null) {
@@ -61,7 +60,14 @@ public class Loading {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-
+                        try {
+                            Thread.sleep(3000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        if (progressDialog != null)
+                            progressDialog.dismiss();
+                        progressDialog = null;
                     }
                 }).run();
             }

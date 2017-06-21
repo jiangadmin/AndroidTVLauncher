@@ -1,8 +1,8 @@
-package com.jiang.launcher.Servlet;
+package com.jiang.launcher.servlet;
 
 import android.os.AsyncTask;
 
-import com.jiang.launcher.Entity.Const;
+import com.jiang.launcher.entity.Const;
 import com.jiang.launcher.utils.HttpUtil;
 import com.jiang.launcher.utils.LogUtil;
 

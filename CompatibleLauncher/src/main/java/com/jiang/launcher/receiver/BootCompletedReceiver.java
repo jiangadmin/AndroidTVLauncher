@@ -1,10 +1,10 @@
-package com.jiang.launcher.Receiver;
+package com.jiang.launcher.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.jiang.launcher.Activity.Home_Activity;
+import com.jiang.launcher.activity.Home_Activity;
 
 /**
  * Created by  jiang

@@ -2,7 +2,7 @@ package com.jiang.launcher.utils;
 
 import android.text.TextUtils;
 
-import com.jiang.launcher.Entity.Const;
+import com.jiang.launcher.entity.Const;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

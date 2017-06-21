@@ -204,7 +204,7 @@
                 android:id="@+id/setting_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_setting" />
 
             <TextView
                 android:id="@+id/setting_txt"

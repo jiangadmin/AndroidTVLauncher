@@ -40,7 +40,6 @@ public class APPList_Activity extends AppCompatActivity {
 
     private void initview() {
         mGridView = (GridView) findViewById(R.id.app_grid);
-
     }
 
     //能显示的程序包名
@@ -56,6 +55,7 @@ public class APPList_Activity extends AppCompatActivity {
         }
         mAdapter = new AppAdapter(this, mAppList);
         mGridView.setAdapter(mAdapter);
+        mGridView.setSmoothScrollbarEnabled(true);
 
     }
 }

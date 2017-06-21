@@ -152,12 +152,14 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
                 startActivity(new Intent(this, Setting_Activity.class));
                 break;
             case R.id.home_1:
+
                 break;
             case R.id.home_2:
                 startActivity(new Intent(this, APPList_Activity.class));
                 break;
             case R.id.home_3:
-                startActivity(new Intent(getPackageManager().getLaunchIntentForPackage("com.joyodream.jiji")));
+                //直接启动 HDP直播
+                startActivity(new Intent(getPackageManager().getLaunchIntentForPackage("hdpfans.com")));
                 break;
             case R.id.home_4:
                 startActivity(new Intent(this, MainActivity.class));

@@ -8,17 +8,17 @@
         android:layout_width="match_parent"
         android:layout_height="42dp" />
 
-    <GridView
-        android:id="@+id/app_grid"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:descendantFocusability="afterDescendants"
-        android:fadingEdge="none"
-        android:focusable="true"
-        android:horizontalSpacing="10dp"
-        android:numColumns="4"
-        android:scrollbars="none"
-        android:verticalSpacing="10dp" />
+
+        <GridView
+            android:id="@+id/app_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:descendantFocusability="afterDescendants"
+            android:horizontalSpacing="10dp"
+            android:numColumns="4"
+            android:scrollbars="none"
+            android:smoothScrollbar="true"
+            android:verticalSpacing="10dp" />
 
 </LinearLayout>

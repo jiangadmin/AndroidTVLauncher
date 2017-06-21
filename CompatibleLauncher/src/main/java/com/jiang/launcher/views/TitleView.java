@@ -12,6 +12,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -132,7 +133,14 @@ public class TitleView extends RelativeLayout {
         imgNetWorkState = (ImageView) this.findViewById(R.id.title_bar_network_state);
         context.registerReceiver(mConnReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
         context.registerReceiver(wifiChange, new IntentFilter(WifiManager.RSSI_CHANGED_ACTION));
+
+        DisplayMetrics dm = context.getApplicationContext().getResources().getDisplayMetrics();
+        RelativeLayout.LayoutParams ll_view = (LayoutParams) layout.getLayoutParams();
+        ll_view.height = dm.heightPixels/10;
+        layout.setLayoutParams(ll_view);
+
     }
+
 
     public void setTvTimeText(String text) {
         tvTime.setText(text);
@@ -153,4 +161,6 @@ public class TitleView extends RelativeLayout {
         context.unregisterReceiver(mConnReceiver);
         context.unregisterReceiver(wifiChange);
     }
+
+
 }

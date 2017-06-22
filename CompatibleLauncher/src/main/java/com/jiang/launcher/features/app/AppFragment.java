@@ -17,6 +17,7 @@ import com.jiang.launcher.adapter.AppAdapter;
 import com.jiang.launcher.main.MainActivity;
 import com.jiang.launcher.model.AppBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AppFragment extends BaseFragment {

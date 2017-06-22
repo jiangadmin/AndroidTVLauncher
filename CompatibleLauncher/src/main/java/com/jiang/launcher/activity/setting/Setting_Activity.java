@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.jiang.launcher.activity.Base_Activity;
 import com.jiang.launcher.R;
@@ -63,18 +64,10 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         mFileManage = (ImageButton) findViewById(R.id.setting_file);
         mAbout = (ImageButton) findViewById(R.id.setting_about);
         mCleanGarbage = (ImageButton) findViewById(R.id.setting_clean);
-        mCleanMemory = (ImageButton) findViewById(R.id.setting_accelerate);
+        mCleanMemory = (ImageButton) findViewById(R.id.setting_gogogo);
         mAutoRunManage = (ImageButton) findViewById(R.id.setting_autorun);
 
-        LinearLayout.LayoutParams ll_uninstall = (LinearLayout.LayoutParams) mAppUninstall.getLayoutParams();
 
-        ll_uninstall.width = metric.widthPixels / 5;
-        ll_uninstall.height = metric.heightPixels / 9*2;
-
-        mAppUninstall.setLayoutParams(ll_uninstall);
-        mCleanGarbage.setLayoutParams(ll_uninstall);
-        mCleanMemory.setLayoutParams(ll_uninstall);
-        mAutoRunManage.setLayoutParams(ll_uninstall);
     }
 
     private void initeven() {

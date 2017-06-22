@@ -118,12 +118,13 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        LogUtil.e(TAG, "keyCode："+keyCode);
         switch (keyCode) {
             case KeyEvent.KEYCODE_HOME:
-                LogUtil.e(TAG, "点击了HOME键");
+                LogUtil.e(TAG, "KEYCODE_HOME");
                 return true;
             case KeyEvent.KEYCODE_BACK:
-
+                LogUtil.e(TAG, "KEYCODE_BACK");
                 return true;
             case KeyEvent.KEYCODE_DPAD_UP:
                 if (!toolbar_show) {

@@ -1,19 +1,11 @@
-package com.jiang.launcher.Activity;
+package com.jiang.launcher.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-import com.jiang.launcher.R;
-import com.jiang.launcher.utils.LogUtil;
 
 /**
  * Created by  jiang

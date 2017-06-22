@@ -1,13 +1,12 @@
 package com.jiang.launcher.features.setting;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.jiang.launcher.Activity.Base_Activity;
-import com.jiang.launcher.Activity.Setting.WifiHotspot_Activity;
+import com.jiang.launcher.activity.Base_Activity;
+import com.jiang.launcher.activity.setting.WifiHotspot_Activity;
 import com.jiang.launcher.R;
 import com.jiang.launcher.features.Bluetooth;
 import com.jiang.launcher.features.Ethernet;

@@ -1,4 +1,4 @@
-package com.jiang.launcher.Activity;
+package com.jiang.launcher.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.jiang.launcher.Activity.Setting.Setting_Activity;
+import com.jiang.launcher.activity.setting.Setting_Activity;
 import com.jiang.launcher.R;
 import com.jiang.launcher.main.MainActivity;
 import com.jiang.launcher.utils.AnimUtils;

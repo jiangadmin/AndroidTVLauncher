@@ -31,7 +31,7 @@
 
         <!--主页-->
         <activity
-            android:name=".Activity.Home_Activity"
+            android:name=".activity.Home_Activity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,17 +45,17 @@
 
         <!--APP列表-->
         <activity
-            android:name=".Activity.APPList_Activity"
+            android:name=".activity.APPList_Activity"
             android:screenOrientation="landscape" />
 
         <!--控制台-->
         <activity
-            android:name=".Activity.Setting.Setting_Activity"
+            android:name=".activity.setting.Setting_Activity"
             android:screenOrientation="landscape" />
 
         <!--WIFI 热点-->
         <activity
-            android:name=".Activity.Setting.WifiHotspot_Activity"
+            android:name=".activity.setting.WifiHotspot_Activity"
             android:screenOrientation="landscape" />
 
         <activity

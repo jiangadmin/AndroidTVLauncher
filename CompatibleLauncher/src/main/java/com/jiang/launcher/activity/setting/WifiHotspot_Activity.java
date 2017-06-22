@@ -1,4 +1,4 @@
-package com.jiang.launcher.Activity.Setting;
+package com.jiang.launcher.activity.setting;
 
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.widget.EditText;
 import android.widget.Switch;
 
-import com.jiang.launcher.Activity.Base_Activity;
+import com.jiang.launcher.activity.Base_Activity;
 import com.jiang.launcher.R;
 import com.jiang.launcher.utils.LogUtil;
 

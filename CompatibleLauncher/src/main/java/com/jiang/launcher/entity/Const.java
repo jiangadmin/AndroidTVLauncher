@@ -1,4 +1,4 @@
-package com.jiang.launcher.Entity;
+package com.jiang.launcher.entity;
 
 /**
  * Created by  jiang

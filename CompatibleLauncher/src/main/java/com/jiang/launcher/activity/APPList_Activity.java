@@ -1,4 +1,4 @@
-package com.jiang.launcher.Activity;
+package com.jiang.launcher.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +9,6 @@ import com.jiang.launcher.R;
 import com.jiang.launcher.adapter.AppAdapter;
 import com.jiang.launcher.features.app.AppDataManage;
 import com.jiang.launcher.model.AppBean;
-import com.jiang.launcher.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -80,21 +80,21 @@
         <activity android:name="com.jiang.launcher.features.wifi.WifiActivity" />
 
         <!--开机广播接收-->
-        <receiver android:name=".Receiver.BootCompletedReceiver">
+        <receiver android:name=".receiver.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <!--关机广播接收-->
-        <receiver android:name=".Receiver.ShutdownReceiver">
+        <receiver android:name=".receiver.ShutdownReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_SHUTDOWN" />
             </intent-filter>
         </receiver>
 
         <!--亮屏 息屏-->
-        <receiver android:name=".Receiver.ScreenStatusReceiver">
+        <receiver android:name=".receiver.ScreenStatusReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.SCREEN_ON" />
                 <action android:name="android.intent.action.SCREEN_OFF" />

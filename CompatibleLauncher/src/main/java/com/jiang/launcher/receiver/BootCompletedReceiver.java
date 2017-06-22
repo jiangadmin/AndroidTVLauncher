@@ -1,4 +1,4 @@
-package com.jiang.launcher.Receiver;
+package com.jiang.launcher.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

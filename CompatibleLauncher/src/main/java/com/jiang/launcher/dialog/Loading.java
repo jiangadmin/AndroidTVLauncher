@@ -1,4 +1,4 @@
-package com.jiang.launcher.utils;
+package com.jiang.launcher.dialog;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -61,7 +61,12 @@ public class Loading {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        dismiss();
                     }
                 }).run();
             }

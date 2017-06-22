@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 
 import com.jiang.launcher.activity.Base_Activity;
 import com.jiang.launcher.R;
@@ -18,7 +16,7 @@ import com.jiang.launcher.features.eliminateprocess.EliminateMainActivity;
 import com.jiang.launcher.features.garbageclear.GarbageClear;
 import com.jiang.launcher.features.setting.SettingCustom;
 import com.jiang.launcher.features.speedtest.SpeedTestActivity;
-import com.jiang.launcher.utils.Loading;
+import com.jiang.launcher.dialog.Loading;
 
 /**
  * Created by  jiang
@@ -51,9 +49,6 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
     }
 
     private void initview() {
-        //获取屏幕宽度
-        DisplayMetrics metric = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metric);
 
         mAppUninstall = (ImageButton) findViewById(R.id.setting_uninstall);
         mNetworkSetting = (ImageButton) findViewById(R.id.setting_net);
@@ -66,15 +61,6 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         mCleanMemory = (ImageButton) findViewById(R.id.setting_accelerate);
         mAutoRunManage = (ImageButton) findViewById(R.id.setting_autorun);
 
-        LinearLayout.LayoutParams ll_uninstall = (LinearLayout.LayoutParams) mAppUninstall.getLayoutParams();
-
-        ll_uninstall.width = metric.widthPixels / 5;
-        ll_uninstall.height = metric.heightPixels / 9*2;
-
-        mAppUninstall.setLayoutParams(ll_uninstall);
-        mCleanGarbage.setLayoutParams(ll_uninstall);
-        mCleanMemory.setLayoutParams(ll_uninstall);
-        mAutoRunManage.setLayoutParams(ll_uninstall);
     }
 
     private void initeven() {
@@ -89,7 +75,6 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         mNetworkSpeed.setOnClickListener(this);
         mSysUpdate.setOnClickListener(this);
         mAutoRunManage.setOnClickListener(this);
-
 
     }
 

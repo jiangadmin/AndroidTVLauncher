@@ -1,5 +1,6 @@
 package com.jiang.launcher.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.widget.GridView;
 
 import com.jiang.launcher.R;
 import com.jiang.launcher.adapter.AppAdapter;
+import com.jiang.launcher.entity.Const;
 import com.jiang.launcher.features.app.AppDataManage;
 import com.jiang.launcher.model.AppBean;
 
@@ -42,13 +44,13 @@ public class APPList_Activity extends AppCompatActivity {
     }
 
     //能显示的程序包名
-    String packagename = "com.jiang.launcher";
+    String packagename = Const.芒果TV+","+Const.优酷XL+","+Const.魔力视频;
 
     private void initeven() {
         AppDataManage getAppInstance = new AppDataManage(this);
         mAppList = getAppInstance.getLaunchAppList();
         for (int i = 0; i <mAppList.size() ; i++) {
-            if (packagename.indexOf(mAppList.get(i).getPackageName())!=-1){
+            if (packagename.contains(mAppList.get(i).getPackageName())){
                 showlist.add(mAppList.get(i));
             }
         }
@@ -56,5 +58,11 @@ public class APPList_Activity extends AppCompatActivity {
         mGridView.setAdapter(mAdapter);
         mGridView.setSmoothScrollbarEnabled(true);
 
+        if (showlist.size()==0){
+
+        }else if (showlist.size()==1){
+            //如果就一个，那就直接启动
+            startActivity(new Intent(getPackageManager().getLaunchIntentForPackage(showlist.get(0).getPackageName())));
+        }
     }
 }

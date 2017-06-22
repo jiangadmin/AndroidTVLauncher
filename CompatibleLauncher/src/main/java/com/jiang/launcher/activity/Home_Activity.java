@@ -11,11 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.jiang.launcher.activity.setting.Setting_Activity;
 import com.jiang.launcher.R;
+import com.jiang.launcher.activity.setting.Setting_Activity;
+import com.jiang.launcher.dialog.PwdDialog;
+import com.jiang.launcher.entity.Const;
 import com.jiang.launcher.main.MainActivity;
 import com.jiang.launcher.utils.AnimUtils;
 import com.jiang.launcher.utils.LogUtil;
+import com.jiang.launcher.utils.Tools;
 import com.jiang.launcher.views.TitleView;
 
 /**
@@ -147,6 +150,7 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.back:
+                new PwdDialog(this, R.style.MyDialog).show();
                 break;
             case R.id.setting:
                 startActivity(new Intent(this, Setting_Activity.class));
@@ -159,7 +163,13 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
                 break;
             case R.id.home_3:
                 //直接启动 HDP直播
-                startActivity(new Intent(getPackageManager().getLaunchIntentForPackage("hdpfans.com")));
+                if (Tools.isAppInstalled(this, Const.HDP直播)) {
+                    startActivity(new Intent(getPackageManager().getLaunchIntentForPackage(Const.HDP直播)));
+                }else if (Tools.isAppInstalled(this,Const.超级直播)){
+                    startActivity(new Intent(getPackageManager().getLaunchIntentForPackage(Const.超级直播)));
+                }else {
+
+                }
                 break;
             case R.id.home_4:
                 startActivity(new Intent(this, MainActivity.class));

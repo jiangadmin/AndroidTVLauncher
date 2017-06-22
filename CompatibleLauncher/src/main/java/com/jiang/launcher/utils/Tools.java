@@ -276,7 +276,7 @@ public final class Tools {
             Process p = Runtime.getRuntime().exec("ping -c 1 -w 100 " + ip);// ping3次
             // 读取ping的内容，可不加。
             InputStream input = p.getInputStream();
-            BufferedReader in = new BufferedReader(new InputStreamReader(input,StandardCharsets.UTF_8));
+            BufferedReader in = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));
             StringBuffer stringBuffer = new StringBuffer();
             String content = "";
             while ((content = in.readLine()) != null) {
@@ -353,5 +353,27 @@ public final class Tools {
         return px;
     }
 
+    /**
+     * 判断APP有没有
+     * @param context
+     * @param packagename
+     * @return
+     */
+    public static boolean isAppInstalled(Context context, String packagename) {
+        PackageInfo packageInfo;
+        try {
+            packageInfo = context.getPackageManager().getPackageInfo(packagename, 0);
+        } catch (Exception e) {
+            packageInfo = null;
+            e.printStackTrace();
+        }
+        if (packageInfo == null) {
+            //System.out.println("没有安装");
+            return false;
+        } else {
+            //System.out.println("已经安装");
+            return true;
+        }
+    }
 
 }

@@ -31,6 +31,20 @@ public class Const {
     public static String WPS投影宝="cn.wps.moffice_i18n_TV";//WPS投影宝
     public static String 影视资源="com.xgimi.wasutv";//影视资源
 
+    public static String 讯飞语点="com.iflytek.wasutv";//影视资源
+    public static String 应用="com.gimiapp";//影视资源
+    public static String 芒果游戏中心="com.xgimi.wasutv";//影视资源
+    public static String 迅雷远程="com.xgimi.wasutv";//影视资源
+
+    public static String 资源管理器="com.xgimi.filemanager";//影视资源
+    public static String 无线投屏="com.xgimi.wasutv";//影视资源
+    public static String 无屏助手TV="com.xgimi.wasutv";//影视资源
+    public static String 奇异果="com.gitvjimi.video";//影视资源
+
+    public static String 优酷XL="com.youku.tv.c";//影视资源
+    public static String 魔力视频="com.molitv.android.v2";//影视资源
+    public static String 电视家新版="com.dianshijia.newlive";//影视资源
+
 
 
 

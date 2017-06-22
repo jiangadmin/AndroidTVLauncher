@@ -63,6 +63,7 @@ public class APPList_Activity extends AppCompatActivity {
         }else if (showlist.size()==1){
             //如果就一个，那就直接启动
             startActivity(new Intent(getPackageManager().getLaunchIntentForPackage(showlist.get(0).getPackageName())));
+            finish();
         }
     }
 }

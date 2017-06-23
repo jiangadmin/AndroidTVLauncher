@@ -17,7 +17,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 
     <!--系统启动完成广播接收器-->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -79,11 +78,11 @@
 
         <!--清理后台-->
         <activity
-            android:name=".features.garbageclear.GarbageClear"
+            android:name="com.jiang.launcher.features.garbageclear.GarbageClear"
             android:theme="@android:style/Theme.Dialog" />
-
         <activity android:name="com.jiang.launcher.features.wifi.WifiActivity" />
 
+        <!--开机广播接收-->
         <receiver android:name=".receiver.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

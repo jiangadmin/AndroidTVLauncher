@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 
 import com.jiang.launcher.entity.Const;
 import com.jiang.launcher.utils.HttpUtil;
-import com.jiang.launcher.utils.Loading;
+import com.jiang.launcher.dialog.Loading;
 
 import java.util.HashMap;
 import java.util.Map;

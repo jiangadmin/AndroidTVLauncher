@@ -4,11 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.jiang.launcher.activity.Base_Activity;
 import com.jiang.launcher.R;
@@ -19,7 +16,7 @@ import com.jiang.launcher.features.eliminateprocess.EliminateMainActivity;
 import com.jiang.launcher.features.garbageclear.GarbageClear;
 import com.jiang.launcher.features.setting.SettingCustom;
 import com.jiang.launcher.features.speedtest.SpeedTestActivity;
-import com.jiang.launcher.utils.Loading;
+import com.jiang.launcher.dialog.Loading;
 
 /**
  * Created by  jiang
@@ -52,9 +49,6 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
     }
 
     private void initview() {
-        //获取屏幕宽度
-        DisplayMetrics metric = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metric);
 
         mAppUninstall = (ImageButton) findViewById(R.id.setting_uninstall);
         mNetworkSetting = (ImageButton) findViewById(R.id.setting_net);
@@ -64,9 +58,8 @@ public class Setting_Activity extends Base_Activity implements View.OnClickListe
         mFileManage = (ImageButton) findViewById(R.id.setting_file);
         mAbout = (ImageButton) findViewById(R.id.setting_about);
         mCleanGarbage = (ImageButton) findViewById(R.id.setting_clean);
-        mCleanMemory = (ImageButton) findViewById(R.id.setting_gogogo);
+        mCleanMemory = (ImageButton) findViewById(R.id.setting_accelerate);
         mAutoRunManage = (ImageButton) findViewById(R.id.setting_autorun);
-
 
     }
 

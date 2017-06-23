@@ -5,7 +5,7 @@
     android:background="@drawable/about_bg"
     android:gravity="center"
     android:id="@+id/pwd_dialog_view"
-    tools:context=".dialog.Password_Dialog">
+    tools:context=".dialog.PwdDialog">
 
 
     <TextView

@@ -19,11 +19,6 @@ public class PwdDialog extends Dialog {
 
     String password="";
 
-    public PwdDialog(Context context) {
-        super(context);
-        this.context = context;
-    }
-
     public PwdDialog(Context context, int theme) {
         super(context, theme);
         this.context = context;

@@ -1,4 +1,4 @@
-package com.jiang.launcher.Activity;
+package com.jiang.launcher.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jiang.launcher.R;
+import com.jiang.launcher.activity.APPList_Activity;
+import com.jiang.launcher.activity.Base_Activity;
 import com.jiang.launcher.activity.setting.Setting_Activity;
 import com.jiang.launcher.dialog.PwdDialog;
 import com.jiang.launcher.entity.Const;

@@ -1,15 +1,18 @@
-package com.jiang.launcher.Activity;
+package com.jiang.launcher.activity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.GridView;
 
 import com.jiang.launcher.R;
 import com.jiang.launcher.adapter.AppAdapter;
+import com.jiang.launcher.entity.Const;
 import com.jiang.launcher.features.app.AppDataManage;
 import com.jiang.launcher.model.AppBean;
-import com.jiang.launcher.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +30,7 @@ public class APPList_Activity extends AppCompatActivity {
 
     private GridView mGridView;
     private List<AppBean> mAppList;
-    private List<AppBean> showlist =new ArrayList<>();
+    private List<AppBean> showlist = new ArrayList<>();
     private AppAdapter mAdapter;
 
     @Override
@@ -43,14 +46,14 @@ public class APPList_Activity extends AppCompatActivity {
     }
 
     //能显示的程序包名
-    String packagename = Const.芒果TV+","+Const.优酷XL+","+Const.魔力视频;
+    String packagename = Const.芒果TV + "," + Const.优酷XL + "," + Const.魔力视频;
 
     private void initeven() {
         AppDataManage getAppInstance = new AppDataManage(this);
         mAppList = getAppInstance.getLaunchAppList();
-        for (int i = 0; i <mAppList.size() ; i++) {
+        for (int i = 0; i < mAppList.size(); i++) {
 
-            if (packagename.contains(mAppList.get(i).getPackageName())){
+            if (packagename.contains(mAppList.get(i).getPackageName())) {
                 showlist.add(mAppList.get(i));
             }
         }
@@ -58,7 +61,7 @@ public class APPList_Activity extends AppCompatActivity {
         mGridView.setAdapter(mAdapter);
         mGridView.setSmoothScrollbarEnabled(true);
 
-        if (showlist.size()==0){
+        if (showlist.size() == 0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("错误");
             builder.setMessage("资源缺失，请联系服务人员!");
@@ -69,7 +72,7 @@ public class APPList_Activity extends AppCompatActivity {
                 }
             });
             builder.show();
-        }else if (showlist.size()==1){
+        } else if (showlist.size() == 1) {
             //如果就一个，那就直接启动
             startActivity(new Intent(getPackageManager().getLaunchIntentForPackage(showlist.get(0).getPackageName())));
             finish();

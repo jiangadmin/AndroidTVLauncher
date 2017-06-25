@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.jiang.launcher.activity.Home_Activity;
+import com.jiang.launcher.servlet.TurnOn_servlet;
 
 
 /**
@@ -23,6 +24,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             Intent start = new Intent(context, Home_Activity.class);
             start.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);//
             context.startActivity(start);
+            //发送请求
+            new TurnOn_servlet().execute();
         }
     }
 }

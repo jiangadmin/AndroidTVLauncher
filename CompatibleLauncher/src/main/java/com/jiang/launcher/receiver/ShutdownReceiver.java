@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import com.jiang.launcher.servlet.TurnOff_servlet;
+
 import java.io.File;
 import java.io.FileOutputStream;
 /**
@@ -18,6 +20,9 @@ public class ShutdownReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals(Intent.ACTION_SHUTDOWN)) {
+            //关机发送请求
+            new TurnOff_servlet().execute();
+
             //example:写入文件
             FileOutputStream fos;
             try {

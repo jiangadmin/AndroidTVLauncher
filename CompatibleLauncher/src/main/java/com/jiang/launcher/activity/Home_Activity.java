@@ -16,7 +16,6 @@ import com.jiang.launcher.activity.setting.Setting_Activity;
 import com.jiang.launcher.dialog.PwdDialog;
 import com.jiang.launcher.entity.Const;
 import com.jiang.launcher.main.MainActivity;
-import com.jiang.launcher.servlet.Timing_Servlet;
 import com.jiang.launcher.utils.AnimUtils;
 import com.jiang.launcher.utils.LogUtil;
 import com.jiang.launcher.utils.Tools;
@@ -54,9 +53,6 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
         setContentView(R.layout.activty_home);
         initview();
         initeven();
-
-        //开始定时发请求
-        new Timing_Servlet().execute();
     }
 
     private void initview() {

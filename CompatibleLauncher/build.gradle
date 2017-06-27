@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        jiang {
+            keyAlias 'jiang'
+            keyPassword 'jiangadmin'
+            storeFile file('C:/Users/wwwfa/Desktop/AndroidTVLauncher/Jiang.jks')
+            storePassword 'jiangadmin'
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion '25.0.0'
-
     defaultConfig {
         applicationId "com.jiang.launcher"
         minSdkVersion 15
@@ -14,12 +21,12 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             proguardFiles "proguard-rules.pro"
+            signingConfig signingConfigs.jiang
         }
     }
-
     lintOptions {
         checkReleaseBuilds false
         abortOnError false

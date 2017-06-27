@@ -1,7 +1,8 @@
 package com.jiang.launcher.servlet;
 
+import android.content.Context;
 import android.os.AsyncTask;
-import android.os.CountDownTimer;
+import android.telephony.TelephonyManager;
 
 import com.jiang.launcher.entity.Const;
 import com.jiang.launcher.utils.HttpUtil;
@@ -19,12 +20,19 @@ import java.util.Map;
  * update：
  */
 public class Timing_Servlet extends AsyncTask<String, Integer, String> {
+
     private static final String TAG = "Timing_Servlet";
+    Context context;
+
+    public Timing_Servlet(Context context) {
+        this.context = context;
+    }
 
     @Override
     protected String doInBackground(String... strings) {
-        Const.timeCount.start();
+
         Map map = new HashMap();
+
         map.put("text", "定时发送请求");
         String res = HttpUtil.doPost(Const.URL + "Timing", map);
         LogUtil.e(TAG, "定时发送");
@@ -32,27 +40,6 @@ public class Timing_Servlet extends AsyncTask<String, Integer, String> {
         return null;
     }
 
-    /**
-     * 计时器
-     */
-  public static class TimeCount extends CountDownTimer {
-        public TimeCount(long millisInFuture, long countDownInterval) {
-            super(millisInFuture, countDownInterval);//参数依次为总时长,和计时的时间间隔
-        }
-
-        //倒计时完成
-        @Override
-        public void onFinish() {
-            //间断性发出信息
-            new Timing_Servlet().execute();
-
-        }
-
-        @Override
-        public void onTick(long millisUntilFinished) {//计时过程显示
-
-        }
-    }
 
     @Override
     protected void onPostExecute(String s) {

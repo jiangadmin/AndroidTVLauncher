@@ -1,7 +1,5 @@
 package com.jiang.launcher.entity;
 
-import com.jiang.launcher.servlet.Timing_Servlet;
-
 /**
  * Created by  jiang
  * on 2017/6/19.
@@ -11,8 +9,10 @@ import com.jiang.launcher.servlet.Timing_Servlet;
  * update：
  */
 public class Const {
-    public static Timing_Servlet.TimeCount timeCount = new Timing_Servlet.TimeCount(5 * 1000, 1000);
+
     public static String URL = "http://192.168.0.103:8080/Server/";
+
+    public static int Timing = 30;
 
     public static String 芒果TV = "com.hunantv.license";//芒果TV
     public static String 随心听 = "com.xgimi.duobanfm";//随心听

@@ -22,6 +22,7 @@ public class TurnOff_servlet extends AsyncTask<String,Integer,String> {
     protected String doInBackground(String... strings) {
         Map map = new HashMap();
         map.put("text", "关机发送请求");
+        map.put("序列号","");
 
         String res = HttpUtil.doPost(Const.URL + "TurnOff", map);
         return null;

@@ -2,7 +2,6 @@ package com.jiang.launcher.servlet;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.telephony.TelephonyManager;
 
 import com.jiang.launcher.entity.Const;
 import com.jiang.launcher.utils.HttpUtil;
@@ -34,6 +33,7 @@ public class Timing_Servlet extends AsyncTask<String, Integer, String> {
         Map map = new HashMap();
 
         map.put("text", "定时发送请求");
+        map.put("序列号", "");
         String res = HttpUtil.doPost(Const.URL + "Timing", map);
         LogUtil.e(TAG, "定时发送");
 

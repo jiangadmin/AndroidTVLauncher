@@ -22,6 +22,8 @@ public class Update_Servlet extends AsyncTask<String,Integer,String> {
     @Override
     protected String doInBackground(String... strings) {
         Map map =new HashMap();
+        map.put("序列号","");
+        map.put("版本号","");
 
         String res = HttpUtil.doPost(Const.URL,map);
         return null;

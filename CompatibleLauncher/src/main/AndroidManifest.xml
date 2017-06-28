@@ -18,6 +18,9 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!--定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <!--系统启动完成广播接收器-->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 

@@ -23,8 +23,11 @@ public class TurnOn_servlet extends AsyncTask<String, Integer, String> {
     protected String doInBackground(String... strings) {
         Map map = new HashMap();
         map.put("text", "开机发送请求");
-        map.put("序列号","");
-
+        map.put("设备号", "开机发送请求");
+        map.put("版本号", "开机发送请求");
+        map.put("省", "开机发送请求");
+        map.put("市", "开机发送请求");
+        map.put("区", "开机发送请求");
         do {
             HttpUtil.doPost(Const.URL + "TurnOn", map);
 

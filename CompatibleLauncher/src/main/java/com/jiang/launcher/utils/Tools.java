@@ -7,9 +7,14 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.location.Location;
+import android.location.LocationListener;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
+import android.support.annotation.RequiresApi;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -69,13 +74,13 @@ public final class Tools {
      * @param origin
      * @return
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static String md5Encode(String origin) {
         String resultString = null;
         try {
             resultString = new String(origin);
             MessageDigest md = MessageDigest.getInstance("MD5");
-            resultString = byteArrayToHexString(md.digest(resultString
-                    .getBytes(StandardCharsets.UTF_8)));
+            resultString = byteArrayToHexString(md.digest(resultString.getBytes(StandardCharsets.UTF_8)));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -376,6 +381,73 @@ public final class Tools {
         }
     }
 
+    /**
+     * 版本名
+     * @param context
+     * @return
+     */
+    public static String getVersionName(Context context) {
+        return getPackageInfo(context).versionName;
+    }
+
+    /**
+     * 版本号
+     * @param context
+     * @return
+     */
+    public static int getVersionCode(Context context) {
+        return getPackageInfo(context).versionCode;
+    }
+
+    private static PackageInfo getPackageInfo(Context context) {
+        PackageInfo pi = null;
+
+        try {
+            PackageManager pm = context.getPackageManager();
+            pi = pm.getPackageInfo(context.getPackageName(),
+                    PackageManager.GET_CONFIGURATIONS);
+
+            return pi;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return pi;
+    }
+
+    private final LocationListener locationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            getLocationInfo(location);
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+            getLocationInfo(null);
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+            getLocationInfo(null);
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+    };
+
+    private void getLocationInfo(Location location) {
+        String latLongInfo;
+        if (location != null) {
+            double latitude = location.getLatitude();//维度
+            double longitude = location.getLongitude();//经度
+            //
+            LogUtil.e(TAG,"getProvider:"+location.getProvider());
+        }else{
+            latLongInfo = "No location found";
+        }
+    }
 
 
 }

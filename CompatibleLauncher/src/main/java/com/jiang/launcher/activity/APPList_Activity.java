@@ -46,13 +46,17 @@ public class APPList_Activity extends AppCompatActivity {
     }
 
     //能显示的程序包名
-    String packagename = Const.芒果TV + "," + Const.优酷XL + "," + Const.魔力视频;
+//    String packagename = Const.芒果TV + "," + Const.优酷XL + "," + Const.魔力视频;
+    String packagename = "ALL";
 
     private void initeven() {
         AppDataManage getAppInstance = new AppDataManage(this);
         mAppList = getAppInstance.getLaunchAppList();
         for (int i = 0; i < mAppList.size(); i++) {
-
+            if (packagename.equals("ALL")){
+                showlist.addAll(mAppList);
+                continue;
+            }
             if (packagename.contains(mAppList.get(i).getPackageName())) {
                 showlist.add(mAppList.get(i));
             }

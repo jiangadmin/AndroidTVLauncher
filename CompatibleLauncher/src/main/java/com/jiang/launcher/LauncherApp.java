@@ -1,11 +1,14 @@
 package com.jiang.launcher;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.os.CountDownTimer;
 
 import com.jacky.common.app.BaseApp;
 import com.jiang.launcher.entity.Const;
 import com.jiang.launcher.servlet.Timing_Servlet;
+
+import java.util.List;
 
 /**
  * Launcher Application
@@ -58,6 +61,31 @@ public class LauncherApp extends BaseApp {
         public void onTick(long millisUntilFinished) {//计时过程显示
 
         }
+    }
+
+    /**
+     * 检测是否在后台运行
+     * @param context
+     * @return
+     */
+    public boolean isBackground(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager.getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+            if (appProcess.processName.equals(context.getPackageName())) {
+
+                if (appProcess.importance != ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+//                    MyLogUtils.Loge(context.getPackageName(), "处于后台"
+//                           + appProcess.processName);
+                    return true;
+                } else {
+//                    MyLogUtils.Loge(context.getPackageName(), "处于前台"
+//                            + appProcess.processName);
+                    return false;
+                }
+            }
+        }
+        return false;
     }
 
 

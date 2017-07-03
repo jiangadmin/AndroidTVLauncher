@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jiang.launcher.R;
+import com.jiang.launcher.activity.setting.SettingActivity;
 import com.jiang.launcher.activity.setting.Setting_Activity;
 import com.jiang.launcher.dialog.PwdDialog;
 import com.jiang.launcher.entity.Const;
@@ -153,7 +154,7 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
                 new PwdDialog(this, R.style.MyDialog).show();
                 break;
             case R.id.setting:
-                startActivity(new Intent(this, Setting_Activity.class));
+                startActivity(new Intent(this, SettingActivity.class));
                 break;
             case R.id.home_1:
 
@@ -176,7 +177,6 @@ public class Home_Activity extends Base_Activity implements View.OnClickListener
                 break;
         }
     }
-
 
     @Override
     public void onFocusChange(View view, boolean b) {

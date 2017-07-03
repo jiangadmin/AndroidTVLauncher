@@ -70,7 +70,6 @@ public class Base_Activity extends AppCompatActivity  {
         a.setFillAfter(true);
         v.clearAnimation();
         v.setAnimation(a);
-//        v.bringToFront();
         a.start();
     }
 
